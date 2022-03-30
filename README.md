@@ -1,10 +1,11 @@
-# Taller - SOFKA
+# Proyecto final  - SOFKA
 
-## Reserva de citas médicas
+## Aplicaciones empresariales
 
-Actividad la cual a través de Spring Boot la programación reactiva. 
-Base de datos MongoDB alojado en Atlas
+Actividad la cual a través de Spring Boot la programación reactiva. Se desea solucionar la letra administrada por el cuerpo docente. 
+Base de datos MongoDB alojado en Atlas.
 
-https://taller-consultamedica-sofka.herokuapp.com/swagger-ui.html
+### Repositorio FRONTEND
 
-![img.png](img.png)
+
+### Link Heroku
