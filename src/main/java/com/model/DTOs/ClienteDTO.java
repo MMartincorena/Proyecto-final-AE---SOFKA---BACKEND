@@ -2,34 +2,35 @@ package com.model.DTOs;
 
 public class ClienteDTO {
 
-    private String documento;
-    private String nombre;
-    private String celular;
+    private String documentoCliente;
+    private String nombreCliente;
+    private String celularCliente;
+
 
     public ClienteDTO() {}
 
 
-    public String getDocumento() {
-        return documento;
+    public String getDocumentoCliente() {
+        return documentoCliente;
     }
 
-    public void setDocumento(String documento) {
-        this.documento = documento;
+    public void setDocumentoCliente(String documentoCliente) {
+        this.documentoCliente = documentoCliente;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCliente() {
+        return nombreCliente;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
     }
 
-    public String getCelular() {
-        return celular;
+    public String getCelularCliente() {
+        return celularCliente;
     }
 
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public void setCelularCliente(String celularCliente) {
+        this.celularCliente = celularCliente;
     }
 }
