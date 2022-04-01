@@ -48,7 +48,7 @@ public class ClienteController {
 
     // -------------------------------------------------------------------------------------------------  DELETE
     @DeleteMapping("/eliminar/cliente/{id}")
-    private Mono<ResponseEntity<Cliente>> deleteFactura(
+    private Mono<ResponseEntity<Cliente>> deleteCliente(
             @PathVariable("id") String id) {
         return this.clienteService.delete(id)
                 .flatMap(cliente -> Mono.just(ResponseEntity.ok(cliente)))

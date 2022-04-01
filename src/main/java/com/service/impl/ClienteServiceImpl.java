@@ -17,15 +17,12 @@ public class ClienteServiceImpl implements IClienteService {
 
 
     // ---------------------------------------------------------------------------------------------------  CREATE
-    //------------------------------------------------------------------------------------------------------------
     @Override
     public Mono<Cliente> save(Cliente cliente) {
         return this.iClienteRepository.save(cliente);
     }
 
-
     // ---------------------------------------------------------------------------------------------------   READ
-    //-----------------------------------------------------------------------------------------------------------
     @Override
     public Flux<Cliente> findAll(){
         return this.iClienteRepository.findAll();
@@ -42,11 +39,10 @@ public class ClienteServiceImpl implements IClienteService {
     }
 
     // ---------------------------------------------------------------------------------------------------  UPDATE
-    //------------------------------------------------------------------------------------------------------------
     @Override
     public Mono<Cliente> update(String id, Cliente cliente) {
         return this.iClienteRepository.findById(id)
-                .flatMap(clienteDTO1 -> {
+                .flatMap(cliente1 -> {
                     cliente.setId(id);
                     return save(cliente);
                 })
@@ -54,8 +50,6 @@ public class ClienteServiceImpl implements IClienteService {
     }
 
     // -------------------------------------------------------------------------------------------------    DELETE
-    //------------------------------------------------------------------------------------------------------------
-
     @Override
     public Mono<Cliente> delete(String id) {
         return this.iClienteRepository

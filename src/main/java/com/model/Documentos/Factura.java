@@ -5,11 +5,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.UUID;
 
-@Document
+@Document (collection = "facturas")
 public class Factura {
 
     @Id
+    private String id = UUID.randomUUID().toString().substring(0, 10);
     private Long consecutivo; // Identificador consecutivo no al azar
     private HashMap<Long, Integer> productosVendidos;
     private LocalDateTime fecha;
@@ -18,13 +20,22 @@ public class Factura {
     private String nombreVendedor;
 
 
-    public Factura(Long consecutivo, HashMap<Long, Integer> productosVendidos, LocalDateTime fecha, Double montoTotalVenta, String nombreCliente, String nombreVendedor) {
+    public Factura(String id, Long consecutivo, HashMap<Long, Integer> productosVendidos, LocalDateTime fecha, Double montoTotalVenta, String nombreCliente, String nombreVendedor) {
+        this.id = id;
         this.consecutivo = consecutivo;
         this.productosVendidos = productosVendidos;
         this.fecha = fecha;
         this.montoTotalVenta = montoTotalVenta;
         this.nombreCliente = nombreCliente;
         this.nombreVendedor = nombreVendedor;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Long getConsecutivo() {
