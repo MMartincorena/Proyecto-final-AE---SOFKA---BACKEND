@@ -18,12 +18,12 @@ public class ClienteController {
 
     // ----------------------------------------------------------------------------------------------------  GET
     @GetMapping(value = "/cliente")
-    private Flux<Cliente> AllClientes() {
+    private Flux<Cliente> listarTodosLosClientes() {
         return this.clienteService.findAll();
     }
 
     @GetMapping(value = "/buscar/cliente/{id}")
-    private Mono<Cliente> searchClienteByID(@PathVariable("id") String id) {
+    private Mono<Cliente> buscarClientePorID(@PathVariable("id") String id) {
         return this.clienteService.findById(id);
     }
 
