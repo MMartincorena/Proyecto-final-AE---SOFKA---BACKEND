@@ -22,6 +22,7 @@ public class ClienteServiceImpl implements IClienteService {
         return this.IClienteRepository.save(clienteDTO);
     }
 
+
     // ---------------------------------------------------------------------------------------------------   READ
     //-----------------------------------------------------------------------------------------------------------
     @Override
@@ -65,12 +66,7 @@ public class ClienteServiceImpl implements IClienteService {
 
     @Override
     public Mono<ClienteDTO> delete(String id) {
-        return this.IClienteRepository
-                .findById(id)
-                .flatMap(p -> this.IClienteRepository.deleteById(p.getId()).thenReturn(p));
-
+        return null;
     }
-
-
 
 }
