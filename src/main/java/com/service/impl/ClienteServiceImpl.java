@@ -1,8 +1,9 @@
 package com.service.impl;
 
-
-import com.model.DTOs.ClienteDTO;
+import com.model.Documentos.Cliente;
+import com.repository.IClienteRepository;
 import com.service.IClienteService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -12,61 +13,55 @@ import reactor.core.publisher.Mono;
 public class ClienteServiceImpl implements IClienteService {
 
     @Autowired
-    private IClienteService IClienteRepository;
+    private IClienteRepository iClienteRepository;
 
 
     // ---------------------------------------------------------------------------------------------------  CREATE
     //------------------------------------------------------------------------------------------------------------
     @Override
-    public Mono<ClienteDTO> save(ClienteDTO clienteDTO){
-        return this.IClienteRepository.save(clienteDTO);
+    public Mono<Cliente> save(Cliente cliente) {
+        return this.iClienteRepository.save(cliente);
     }
 
 
     // ---------------------------------------------------------------------------------------------------   READ
     //-----------------------------------------------------------------------------------------------------------
     @Override
-    public Flux<ClienteDTO> findAll(){
-        return this.IClienteRepository.findAll();
+    public Flux<Cliente> findAll(){
+        return this.iClienteRepository.findAll();
     }
 
     @Override
-    public Mono<ClienteDTO> findById(String id) {
-        return null;
+    public Mono<Cliente> findById(String id) {
+        return this.iClienteRepository.findById(id);
     }
 
     @Override
-    public Mono<ClienteDTO> findByNombreCliente(String nombreCliente) {
-        return this.IClienteRepository.findByNombreCliente(nombreCliente);
-    }
-
-    @Override
-    public Mono<ClienteDTO> findByDocumentoCliente(String documentoCliente) {
-        return this.IClienteRepository.findByDocumentoCliente(documentoCliente);
+    public Mono<Cliente> findByNombreCliente(String nombreCliente) {
+        return this.iClienteRepository.findByNombreCliente(nombreCliente);
     }
 
     // ---------------------------------------------------------------------------------------------------  UPDATE
     //------------------------------------------------------------------------------------------------------------
     @Override
-    public Mono<ClienteDTO> update(String id, ClienteDTO clienteDTO) {
-        return this.IClienteRepository.findById(id)
+    public Mono<Cliente> update(String id, Cliente cliente) {
+        return this.iClienteRepository.findById(id)
                 .flatMap(clienteDTO1 -> {
-                    clienteDTO.setId(id);
-                    return save(clienteDTO);
+                    cliente.setId(id);
+                    return save(cliente);
                 })
                 .switchIfEmpty(Mono.empty());
     }
 
     // -------------------------------------------------------------------------------------------------    DELETE
     //------------------------------------------------------------------------------------------------------------
-    @Override
-    public Mono<ClienteDTO> deleteById(Object id) {
-        return null;
-    }
 
     @Override
-    public Mono<ClienteDTO> delete(String id) {
-        return null;
+    public Mono<Cliente> delete(String id) {
+        return this.iClienteRepository
+                .findById(id)
+                .flatMap(p -> this.iClienteRepository.deleteById(p.getId()).thenReturn(p));
     }
+
 
 }

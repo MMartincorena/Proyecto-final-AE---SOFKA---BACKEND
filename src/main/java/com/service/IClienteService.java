@@ -1,26 +1,29 @@
 package com.service;
 
-import com.model.DTOs.ClienteDTO;
+
+import com.model.Documentos.Cliente;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
 public interface IClienteService {
 
-    Mono<ClienteDTO> save(ClienteDTO clienteDTO);
+    // ---------------------------------------------------------------------------------------------------  CREATE
+    Mono<Cliente> save(Cliente cliente);
 
-    Mono<ClienteDTO> delete(String id);
+    // ---------------------------------------------------------------------------------------------------    READ
+    Flux<Cliente> findAll();
 
-    Mono<ClienteDTO> deleteById(Object id);
+    Mono<Cliente> findById(String id);
 
-    Mono<ClienteDTO> update(String id, ClienteDTO clienteDTO);
+    Mono<Cliente> findByNombreCliente(String nombreCliente);
 
-    Flux<ClienteDTO> findAll();
+    // ---------------------------------------------------------------------------------------------------  UPDATE
+    Mono<Cliente> update(String id, Cliente cliente);
 
-    Mono<ClienteDTO> findById(String id);
+    // -------------------------------------------------------------------------------------------------    DELETE
+    Mono<Cliente> delete(String id);
 
-    Mono<ClienteDTO> findByDocumentoCliente(String documentoCliente);
 
-    Mono<ClienteDTO> findByNombreCliente(String nombreCliente);
 
 }

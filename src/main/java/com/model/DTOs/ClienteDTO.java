@@ -12,6 +12,12 @@ public class ClienteDTO {
 
     public ClienteDTO() {}
 
+    public ClienteDTO(String id, String documentoCliente, String nombreCliente, String celularCliente) {
+        this.id = id;
+        this.documentoCliente = documentoCliente;
+        this.nombreCliente = nombreCliente;
+        this.celularCliente = celularCliente;
+    }
 
     public String getId() { return id; }
 

@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.model.DTOs.ClienteDTO;
+import com.model.Documentos.Cliente;
 import com.service.impl.ClienteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,32 +16,44 @@ public class ClienteController {
     @Autowired
     private ClienteServiceImpl clienteService;
 
-    // ---------------------------------------------------------------------------------------------------  POST
-    @PostMapping("/cliente")
-    @ResponseStatus(HttpStatus.CREATED)
-    private Mono<ClienteDTO> saveCliente(@RequestBody ClienteDTO clienteDTO) {
-        return this.clienteService.save(clienteDTO);
-    }
-
     // ----------------------------------------------------------------------------------------------------  GET
     @GetMapping(value = "/cliente")
-    private Flux<ClienteDTO> AllClientes() {
+    private Flux<Cliente> AllClientes() {
         return this.clienteService.findAll();
     }
 
     @GetMapping(value = "/buscar/cliente/{id}")
-    private Mono<ClienteDTO> searchClienteByID(@PathVariable("id") String id) {
+    private Mono<Cliente> searchClienteByID(@PathVariable("id") String id) {
         return this.clienteService.findById(id);
     }
 
+
+    // ---------------------------------------------------------------------------------------------------  POST
+    @PostMapping("/cliente")
+    @ResponseStatus(HttpStatus.CREATED)
+    private Mono<Cliente> saveCliente(@RequestBody Cliente cliente) {
+        return this.clienteService.save(cliente);
+    }
+
+
     // ----------------------------------------------------------------------------------------------------  PUT
-    @PutMapping("/edit/cliente/{id}")
-    private Mono<ResponseEntity<ClienteDTO>> updateCliente(
+    @PutMapping("/editar/cliente/{id}")
+    private Mono<ResponseEntity<Cliente>> updateCliente(
             @PathVariable("id") String id,
-            @RequestBody ClienteDTO clienteDTO) {
-        return this.clienteService.update(id, clienteDTO)
-                .flatMap(clienteDTO1 -> Mono.just(ResponseEntity.ok(clienteDTO1)))
+            @RequestBody Cliente cliente) {
+        return this.clienteService.update(id, cliente)
+                .flatMap(cliente1 -> Mono.just(ResponseEntity.ok(cliente1)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
+
+    // -------------------------------------------------------------------------------------------------  DELETE
+    @DeleteMapping("/eliminar/cliente/{id}")
+    private Mono<ResponseEntity<Cliente>> deleteFactura(
+            @PathVariable("id") String id) {
+        return this.clienteService.delete(id)
+                .flatMap(cliente -> Mono.just(ResponseEntity.ok(cliente)))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
+    }
+
 
 }
