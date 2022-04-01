@@ -10,7 +10,7 @@
 
 El siguiente repositorio es el esqueleto base del proyecto: https://github.com/edgarsofka/appCitas-spring-reactivo-mongoDB.git  puedes usarlo como base y seguir el orden los archivos, si no se tiene un orden adecuado se restará puntos
 
-- Capaz de la APIs Reactivas con Webflux -  Puntos: 50%
+- Capaz de la APIs Reactivas con Webflux - Puntos: 50%
 - Estructura de la Base de datos en MongoDB Atlas. - Puntos: 20%
 - Despliegue en Heroku - Puntos: 20%
 - Pruebas unitarias - Puntos: 10%
@@ -24,7 +24,7 @@ Si no se cumple con el rango de tiempo inicial, se deben hacer también los sigu
 
 
 ### Caso de uso:
-- Raúl debe poder guardar la información de sus cliente
+- Raúl debe poder guardar la información de sus clientes
 - Guardar la información de sus proveedores
 - Llevar un inventario de sus productos
 - Llevar histórico de ventas
