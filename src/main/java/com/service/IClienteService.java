@@ -7,24 +7,17 @@ import reactor.core.publisher.Mono;
 
 public interface IClienteService {
 
-    // ---------------------------------------------------------------------------------------------------   CREAR
     Mono<ClienteDTO> save(ClienteDTO clienteDTO);
 
-
-    // ----------------------------------------------------------------------------------------------    MODIFICAR
-    Mono<ClienteDTO> update(String id, ClienteDTO clienteDTO);
-
-
-    // ------------------------------------------------------------------------------------------------   ELIMINAR
     Mono<ClienteDTO> delete(String id);
 
     Mono<ClienteDTO> deleteById(Object id);
 
-
-    // ----------------------------------------------------------------------------------------------------   LEER
-    Mono<ClienteDTO> findById(String id);
+    Mono<ClienteDTO> update(String id, ClienteDTO clienteDTO);
 
     Flux<ClienteDTO> findAll();
+
+    Mono<ClienteDTO> findById(String id);
 
     Mono<ClienteDTO> findByDocumentoCliente(String documentoCliente);
 

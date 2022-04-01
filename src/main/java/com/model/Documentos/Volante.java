@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
-@Document
+@Document(collection = "volantes")
 public class Volante {
 
     @Id
@@ -16,6 +16,14 @@ public class Volante {
     private LocalDateTime fecha;
     private Long codProveedor;
 
+
+    public Volante(String codVolante, String nombreProveedor, HashMap<Long, Integer> productosIngresados, LocalDateTime fecha, Long codProveedor) {
+        this.codVolante = codVolante;
+        this.nombreProveedor = nombreProveedor;
+        this.productosIngresados = productosIngresados;
+        this.fecha = fecha;
+        this.codProveedor = codProveedor;
+    }
 
     public String getCodVolante() {
         return codVolante;

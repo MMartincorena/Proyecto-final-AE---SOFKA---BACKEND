@@ -11,6 +11,11 @@ public class Proveedor {
     private String nombreProveedor;
     private String celularProveedor;
 
+    public Proveedor(String codProveedor, String nombreProveedor, String celularProveedor) {
+        this.codProveedor = codProveedor;
+        this.nombreProveedor = nombreProveedor;
+        this.celularProveedor = celularProveedor;
+    }
 
     public String getCodProveedor() {
         return codProveedor;

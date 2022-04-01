@@ -13,10 +13,21 @@ public class Producto {
     private String nombreProducto;
     private String descripciónProducto;
     private Double precio;
+    private int cantidad;
     private int stockActual;
     private int stockMinimo;
     private int stockMaximo;
 
+    public Producto(String codProducto, String nombreProducto, String descripciónProducto, Double precio, int cantidad, int stockActual, int stockMinimo, int stockMaximo) {
+        this.codProducto = codProducto;
+        this.nombreProducto = nombreProducto;
+        this.descripciónProducto = descripciónProducto;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.stockActual = stockActual;
+        this.stockMinimo = stockMinimo;
+        this.stockMaximo = stockMaximo;
+    }
 
     public String getCodProducto() {
         return codProducto;
@@ -48,6 +59,14 @@ public class Producto {
 
     public void setPrecio(Double precio) {
         this.precio = precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     public int getStockActual() {

@@ -1,5 +1,7 @@
 package com.model.DTOs;
 
+import org.springframework.data.annotation.Id;
+
 public class ClienteDTO {
 
     private String id;
@@ -11,13 +13,9 @@ public class ClienteDTO {
     public ClienteDTO() {}
 
 
-    public String getId() {
-        return id;
-    }
+    public String getId() { return id; }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public void setId(String id) { this.id = id; }
 
     public String getDocumentoCliente() {
         return documentoCliente;
@@ -42,5 +40,6 @@ public class ClienteDTO {
     public void setCelularCliente(String celularCliente) {
         this.celularCliente = celularCliente;
     }
+
 
 }

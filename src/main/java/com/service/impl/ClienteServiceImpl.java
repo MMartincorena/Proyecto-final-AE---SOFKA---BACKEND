@@ -15,21 +15,19 @@ public class ClienteServiceImpl implements IClienteService {
     private IClienteService IClienteRepository;
 
 
-    // ---------------------------------------------------------------------------------------------------   CREAR
+    // ---------------------------------------------------------------------------------------------------  CREATE
     //------------------------------------------------------------------------------------------------------------
     @Override
     public Mono<ClienteDTO> save(ClienteDTO clienteDTO){
         return this.IClienteRepository.save(clienteDTO);
     }
 
-
-    // ---------------------------------------------------------------------------------------------------   LEER
+    // ---------------------------------------------------------------------------------------------------   READ
     //-----------------------------------------------------------------------------------------------------------
     @Override
     public Flux<ClienteDTO> findAll(){
         return this.IClienteRepository.findAll();
     }
-
 
     @Override
     public Mono<ClienteDTO> findById(String id) {
@@ -46,23 +44,19 @@ public class ClienteServiceImpl implements IClienteService {
         return this.IClienteRepository.findByDocumentoCliente(documentoCliente);
     }
 
-
-    // ----------------------------------------------------------------------------------------------    MODIFICAR
+    // ---------------------------------------------------------------------------------------------------  UPDATE
     //------------------------------------------------------------------------------------------------------------
     @Override
     public Mono<ClienteDTO> update(String id, ClienteDTO clienteDTO) {
         return this.IClienteRepository.findById(id)
-                .flatMap(citasDTO1 -> {
+                .flatMap(clienteDTO1 -> {
                     clienteDTO.setId(id);
                     return save(clienteDTO);
                 })
                 .switchIfEmpty(Mono.empty());
     }
 
-
-
-
-    // -------------------------------------------------------------------------------------------------  ELIMINAR
+    // -------------------------------------------------------------------------------------------------    DELETE
     //------------------------------------------------------------------------------------------------------------
     @Override
     public Mono<ClienteDTO> deleteById(Object id) {

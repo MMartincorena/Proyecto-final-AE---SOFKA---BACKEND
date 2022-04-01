@@ -18,6 +18,15 @@ public class Factura {
     private String nombreVendedor;
 
 
+    public Factura(Long consecutivo, HashMap<Long, Integer> productosVendidos, LocalDateTime fecha, Double montoTotalVenta, String nombreCliente, String nombreVendedor) {
+        this.consecutivo = consecutivo;
+        this.productosVendidos = productosVendidos;
+        this.fecha = fecha;
+        this.montoTotalVenta = montoTotalVenta;
+        this.nombreCliente = nombreCliente;
+        this.nombreVendedor = nombreVendedor;
+    }
+
     public Long getConsecutivo() {
         return consecutivo;
     }
