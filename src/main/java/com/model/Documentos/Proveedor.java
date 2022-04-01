@@ -10,7 +10,6 @@ public class Proveedor {
 
     @Id
     private String id = UUID.randomUUID().toString().substring(0, 10);
-
     private String codProveedor;
     private String nombreProveedor;
     private String celularProveedor;

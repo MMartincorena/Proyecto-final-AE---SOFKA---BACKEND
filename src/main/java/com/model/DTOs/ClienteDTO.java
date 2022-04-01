@@ -1,6 +1,5 @@
 package com.model.DTOs;
 
-import org.springframework.data.annotation.Id;
 
 public class ClienteDTO {
 

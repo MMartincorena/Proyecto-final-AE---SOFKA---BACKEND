@@ -4,7 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
+
+import java.util.List;
 import java.util.UUID;
 
 @Document (collection = "facturas")
@@ -13,7 +14,7 @@ public class Factura {
     @Id
     private String id = UUID.randomUUID().toString().substring(0, 10);
     private Long consecutivo; // Identificador consecutivo no al azar
-    private HashMap<Long, Integer> productosVendidos;
+    private List<Producto> productosVendidos;
     private LocalDateTime fecha;
     private Double montoTotalVenta;
     private String nombreCliente;
@@ -22,7 +23,7 @@ public class Factura {
     public Factura() {
     }
 
-    public Factura(String id, Long consecutivo, HashMap<Long, Integer> productosVendidos, LocalDateTime fecha, Double montoTotalVenta, String nombreCliente, String nombreVendedor) {
+    public Factura(String id, Long consecutivo, List<Producto> productosVendidos, LocalDateTime fecha, Double montoTotalVenta, String nombreCliente, String nombreVendedor) {
         this.id = id;
         this.consecutivo = consecutivo;
         this.productosVendidos = productosVendidos;
@@ -48,11 +49,11 @@ public class Factura {
         this.consecutivo = consecutivo;
     }
 
-    public HashMap<Long, Integer> getProductosVendidos() {
+    public List<Producto> getProductosVendidos() {
         return productosVendidos;
     }
 
-    public void setProductosVendidos(HashMap<Long, Integer> productosVendidos) {
+    public void setProductosVendidos(List<Producto> productosVendidos) {
         this.productosVendidos = productosVendidos;
     }
 

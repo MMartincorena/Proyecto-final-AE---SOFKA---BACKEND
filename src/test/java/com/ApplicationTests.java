@@ -1,10 +1,10 @@
-package com.springBajo8.springBajo8;
+package com;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBajo8ApplicationTests {
+class Application {
 
 	@Test
 	void contextLoads() {
