@@ -6,11 +6,21 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Cliente {
 
+
     @Id
+    private String id;
     private String documentoCliente;
     private String nombreCliente;
     private String celularCliente;
 
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getDocumentoCliente() {
         return documentoCliente;

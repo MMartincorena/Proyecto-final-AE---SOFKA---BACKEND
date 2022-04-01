@@ -2,6 +2,7 @@ package com.model.DTOs;
 
 public class ClienteDTO {
 
+    private String id;
     private String documentoCliente;
     private String nombreCliente;
     private String celularCliente;
@@ -9,6 +10,14 @@ public class ClienteDTO {
 
     public ClienteDTO() {}
 
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getDocumentoCliente() {
         return documentoCliente;
@@ -33,4 +42,5 @@ public class ClienteDTO {
     public void setCelularCliente(String celularCliente) {
         this.celularCliente = celularCliente;
     }
+
 }

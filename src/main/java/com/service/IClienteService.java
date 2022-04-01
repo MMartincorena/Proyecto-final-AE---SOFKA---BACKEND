@@ -1,10 +1,11 @@
-package com.repository;
+package com.service;
 
 import com.model.DTOs.ClienteDTO;
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface IClienteRepository extends ReactiveMongoRepository<ClienteDTO,String> {
+
+public interface IClienteService {
 
     // ---------------------------------------------------------------------------------------------------   CREAR
     Mono<ClienteDTO> save(ClienteDTO clienteDTO);
@@ -17,11 +18,16 @@ public interface IClienteRepository extends ReactiveMongoRepository<ClienteDTO,S
     // ------------------------------------------------------------------------------------------------   ELIMINAR
     Mono<ClienteDTO> delete(String id);
 
+    Mono<ClienteDTO> deleteById(Object id);
+
 
     // ----------------------------------------------------------------------------------------------------   LEER
     Mono<ClienteDTO> findById(String id);
 
+    Flux<ClienteDTO> findAll();
+
     Mono<ClienteDTO> findByDocumentoCliente(String documentoCliente);
 
     Mono<ClienteDTO> findByNombreCliente(String nombreCliente);
+
 }
