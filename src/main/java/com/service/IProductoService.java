@@ -1,7 +1,6 @@
 package com.service;
 
 import com.model.Documentos.Producto;
-import com.model.Documentos.Proveedor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -10,9 +9,9 @@ public interface IProductoService {
     Mono<Producto> save(Producto producto);
 
     // ---------------------------------------------------------------------------------------------------   READ
-    Flux<Proveedor> findAll();
+    Flux<Producto> findAll();
 
-    Mono<Proveedor> findById(String id);
+    Mono<Producto> findById(String id);
 
     Mono<Producto> findByNombreProducto(String nombreProducto);
 

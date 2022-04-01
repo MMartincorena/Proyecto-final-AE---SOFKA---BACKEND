@@ -2,7 +2,6 @@ package com.service.impl;
 
 
 import com.model.Documentos.Producto;
-import com.model.Documentos.Proveedor;
 import com.repository.IProductoRepository;
 import com.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +23,12 @@ public class ProductoServiceImpl implements IProductoService {
 
     // ---------------------------------------------------------------------------------------------------   READ
     @Override
-    public Flux<Proveedor> findAll(){
+    public Flux<Producto> findAll(){
         return this.iProductoRepository.findAll();
     }
 
     @Override
-    public Mono<Proveedor> findById(String id) {
+    public Mono<Producto> findById(String id) {
         return this.iProductoRepository.findById(id);
     }
 
