@@ -18,12 +18,12 @@ public class ClienteController {
 
     // ----------------------------------------------------------------------------------------------------  GET
     @GetMapping(value = "/cliente")
-    private Flux<Cliente> listarTodosLosClientes() {
+    private Flux<Cliente> mostrarTodosLosClientes() {
         return this.clienteService.findAll();
     }
 
     @GetMapping(value = "/buscar/cliente/{id}")
-    private Mono<Cliente> buscarClientePorID(@PathVariable("id") String id) {
+    private Mono<Cliente> mostrarClientePorId(@PathVariable("id") String id) {
         return this.clienteService.findById(id);
     }
 
@@ -31,14 +31,14 @@ public class ClienteController {
     // ---------------------------------------------------------------------------------------------------  POST
     @PostMapping("/cliente")
     @ResponseStatus(HttpStatus.CREATED)
-    private Mono<Cliente> saveCliente(@RequestBody Cliente cliente) {
+    private Mono<Cliente> crearCliente(@RequestBody Cliente cliente) {
         return this.clienteService.save(cliente);
     }
 
 
     // ----------------------------------------------------------------------------------------------------  PUT
     @PutMapping("/editar/cliente/{id}")
-    private Mono<ResponseEntity<Cliente>> updateCliente(
+    private Mono<ResponseEntity<Cliente>> modificarClientePorId(
             @PathVariable("id") String id,
             @RequestBody Cliente cliente) {
         return this.clienteService.update(id, cliente)
@@ -48,7 +48,7 @@ public class ClienteController {
 
     // -------------------------------------------------------------------------------------------------  DELETE
     @DeleteMapping("/eliminar/cliente/{id}")
-    private Mono<ResponseEntity<Cliente>> deleteCliente(
+    private Mono<ResponseEntity<Cliente>> eliminarClientePorId(
             @PathVariable("id") String id) {
         return this.clienteService.delete(id)
                 .flatMap(cliente -> Mono.just(ResponseEntity.ok(cliente)))

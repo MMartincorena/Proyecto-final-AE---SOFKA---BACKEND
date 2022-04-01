@@ -19,25 +19,25 @@ public class FacturaController {
 
     // ----------------------------------------------------------------------------------------------------  GET
     @GetMapping(value = "/factura")
-    private Flux<Factura> AllFacturas() {
+    private Flux<Factura> mostrarTodasLasFacturas() {
         return this.facturaService.findAll();
     }
 
     @GetMapping(value = "/buscar/factura/{id}")
-    private Mono<Factura> searchFacturaByID(@PathVariable("id") String id) {
+    private Mono<Factura> mostrarFacturaPorId(@PathVariable("id") String id) {
         return this.facturaService.findById(id);
     }
 
     // ---------------------------------------------------------------------------------------------------  POST
     @PostMapping("/factura")
     @ResponseStatus(HttpStatus.CREATED)
-    private Mono<Factura> saveFactura(@RequestBody Factura factura) {
+    private Mono<Factura> crearFactura(@RequestBody Factura factura) {
         return this.facturaService.save(factura);
     }
 
     // ----------------------------------------------------------------------------------------------------  PUT
     @PutMapping("/editar/factura/{id}")
-    private Mono<ResponseEntity<Factura>> updateFactura(
+    private Mono<ResponseEntity<Factura>> modificarFacturaPorId(
             @PathVariable("id") String id,
             @RequestBody Factura factura) {
         return this.facturaService.update(id, factura)
@@ -47,7 +47,7 @@ public class FacturaController {
 
     // -------------------------------------------------------------------------------------------------  DELETE
     @DeleteMapping("/eliminar/factura/{id}")
-    private Mono<ResponseEntity<Factura>> deleteFactura(
+    private Mono<ResponseEntity<Factura>> eliminarFacturaPorId(
             @PathVariable("id") String id) {
         return this.facturaService.delete(id)
                 .flatMap(factura -> Mono.just(ResponseEntity.ok(factura)))

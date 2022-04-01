@@ -19,6 +19,8 @@ public class Factura {
     private String nombreCliente;
     private String nombreVendedor;
 
+    public Factura() {
+    }
 
     public Factura(String id, Long consecutivo, HashMap<Long, Integer> productosVendidos, LocalDateTime fecha, Double montoTotalVenta, String nombreCliente, String nombreVendedor) {
         this.id = id;

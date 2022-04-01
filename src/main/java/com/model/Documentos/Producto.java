@@ -9,7 +9,8 @@ import java.util.UUID;
 public class Producto {
 
     @Id
-    private String codProducto = UUID.randomUUID().toString().substring(0, 10);
+    private String id = UUID.randomUUID().toString().substring(0, 10);
+    private String codProducto;
     private String nombreProducto;
     private String descripciónProducto;
     private Double precio;
@@ -18,7 +19,11 @@ public class Producto {
     private int stockMinimo;
     private int stockMaximo;
 
-    public Producto(String codProducto, String nombreProducto, String descripciónProducto, Double precio, int cantidad, int stockActual, int stockMinimo, int stockMaximo) {
+    public Producto() {
+    }
+
+    public Producto(String id, String codProducto, String nombreProducto, String descripciónProducto, Double precio, int cantidad, int stockActual, int stockMinimo, int stockMaximo) {
+        this.id = id;
         this.codProducto = codProducto;
         this.nombreProducto = nombreProducto;
         this.descripciónProducto = descripciónProducto;
@@ -27,6 +32,14 @@ public class Producto {
         this.stockActual = stockActual;
         this.stockMinimo = stockMinimo;
         this.stockMaximo = stockMaximo;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCodProducto() {

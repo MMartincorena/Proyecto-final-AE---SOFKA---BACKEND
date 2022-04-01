@@ -5,24 +5,37 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.UUID;
 
 @Document(collection = "volantes")
 public class Volante {
 
     @Id
+    private String id = UUID.randomUUID().toString().substring(0, 10);
     private String codVolante;
     private String nombreProveedor;
     private HashMap<Long, Integer> productosIngresados;
     private LocalDateTime fecha;
     private Long codProveedor;
 
+    public Volante() {
+    }
 
-    public Volante(String codVolante, String nombreProveedor, HashMap<Long, Integer> productosIngresados, LocalDateTime fecha, Long codProveedor) {
+    public Volante(String id, String codVolante, String nombreProveedor, HashMap<Long, Integer> productosIngresados, LocalDateTime fecha, Long codProveedor) {
+        this.id = id;
         this.codVolante = codVolante;
         this.nombreProveedor = nombreProveedor;
         this.productosIngresados = productosIngresados;
         this.fecha = fecha;
         this.codProveedor = codProveedor;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCodVolante() {
