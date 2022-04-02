@@ -8,5 +8,4 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface IClienteRepository extends ReactiveMongoRepository<Cliente,String> {
     Mono<Cliente> findByNombreCliente(String nombreCliente);
-
 }

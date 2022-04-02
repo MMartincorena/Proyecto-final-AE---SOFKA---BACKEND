@@ -1,6 +1,5 @@
 package com.service.impl;
 
-
 import com.model.Documentos.Volante;
 import com.repository.IVolanteRepository;
 import com.service.IVolanteService;
@@ -14,7 +13,6 @@ public class VolanteServiceImpl implements IVolanteService {
 
     @Autowired
     private IVolanteRepository iVolanteRepository;
-
 
     // ---------------------------------------------------------------------------------------------------  CREATE
     @Override

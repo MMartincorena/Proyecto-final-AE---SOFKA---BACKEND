@@ -12,7 +12,7 @@ public class Producto {
     private String id = UUID.randomUUID().toString().substring(0, 10);
     private String codProducto;
     private String nombreProducto;
-    private String descripciónProducto;
+    private String descripcionProducto;
     private Double precio;
     private int cantidad;
     private int stockActual;
@@ -22,11 +22,11 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(String id, String codProducto, String nombreProducto, String descripciónProducto, Double precio, int cantidad, int stockActual, int stockMinimo, int stockMaximo) {
+    public Producto(String id, String codProducto, String nombreProducto, String descripcionProducto, Double precio, int cantidad, int stockActual, int stockMinimo, int stockMaximo) {
         this.id = id;
         this.codProducto = codProducto;
         this.nombreProducto = nombreProducto;
-        this.descripciónProducto = descripciónProducto;
+        this.descripcionProducto = descripcionProducto;
         this.precio = precio;
         this.cantidad = cantidad;
         this.stockActual = stockActual;
@@ -58,12 +58,12 @@ public class Producto {
         this.nombreProducto = nombreProducto;
     }
 
-    public String getDescripciónProducto() {
-        return descripciónProducto;
+    public String getDescripcionProducto() {
+        return descripcionProducto;
     }
 
-    public void setDescripciónProducto(String descripciónProducto) {
-        this.descripciónProducto = descripciónProducto;
+    public void setDescripcionProducto(String descripciónProducto) {
+        this.descripcionProducto = descripciónProducto;
     }
 
     public Double getPrecio() {
