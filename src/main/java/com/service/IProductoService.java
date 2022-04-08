@@ -1,6 +1,6 @@
 package com.service;
 
-import com.model.Documentos.Producto;
+import com.model.Producto;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -1,6 +1,6 @@
 package com.service.impl;
 
-import com.model.Documentos.Proveedor;
+import com.model.Proveedor;
 import com.repository.IProveedorRepository;
 import com.service.IProveedorService;
 import org.springframework.beans.factory.annotation.Autowired;

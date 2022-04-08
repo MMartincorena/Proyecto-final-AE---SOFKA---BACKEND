@@ -2,7 +2,7 @@ package com.controller;
 
 
 
-import com.model.Documentos.Producto;
+import com.model.Producto;
 import com.service.impl.ProductoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

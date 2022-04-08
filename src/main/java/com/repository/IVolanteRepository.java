@@ -1,6 +1,6 @@
 package com.repository;
 
-import com.model.Documentos.Volante;
+import com.model.Volante;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 

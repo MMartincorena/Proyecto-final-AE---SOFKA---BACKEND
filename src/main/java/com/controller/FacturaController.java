@@ -1,7 +1,7 @@
 package com.controller;
 
 
-import com.model.Documentos.Factura;
+import com.model.Factura;
 import com.service.impl.FacturaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

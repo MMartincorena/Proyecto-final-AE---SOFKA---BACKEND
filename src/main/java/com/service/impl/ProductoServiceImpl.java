@@ -1,7 +1,7 @@
 package com.service.impl;
 
 
-import com.model.Documentos.Producto;
+import com.model.Producto;
 import com.repository.IProductoRepository;
 import com.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;

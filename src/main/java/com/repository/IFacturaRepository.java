@@ -1,6 +1,6 @@
 package com.repository;
 
-import com.model.Documentos.Factura;
+import com.model.Factura;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 

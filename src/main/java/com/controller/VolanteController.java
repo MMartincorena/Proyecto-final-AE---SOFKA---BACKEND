@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.model.Documentos.Volante;
+import com.model.Volante;
 import com.service.impl.VolanteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

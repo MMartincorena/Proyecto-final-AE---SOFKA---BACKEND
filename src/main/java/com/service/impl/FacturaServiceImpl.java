@@ -1,6 +1,6 @@
 package com.service.impl;
 
-import com.model.Documentos.Factura;
+import com.model.Factura;
 import com.repository.IFacturaRepository;
 import com.service.IFacturaService;
 import org.springframework.beans.factory.annotation.Autowired;

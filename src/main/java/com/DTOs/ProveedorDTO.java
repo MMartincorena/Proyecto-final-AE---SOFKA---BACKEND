@@ -1,4 +1,4 @@
-package com.model.DTOs;
+package com.DTOs;
 
 public class ProveedorDTO {
 

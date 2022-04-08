@@ -1,6 +1,6 @@
 package com.service.impl;
 
-import com.model.Documentos.Cliente;
+import com.model.Cliente;
 import com.repository.IClienteRepository;
 import com.service.IClienteService;
 

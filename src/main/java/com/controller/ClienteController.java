@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.model.Documentos.Cliente;
+import com.model.Cliente;
 import com.service.impl.ClienteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

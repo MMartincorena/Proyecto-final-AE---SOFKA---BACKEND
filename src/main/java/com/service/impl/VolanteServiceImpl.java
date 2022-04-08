@@ -1,6 +1,6 @@
 package com.service.impl;
 
-import com.model.Documentos.Volante;
+import com.model.Volante;
 import com.repository.IVolanteRepository;
 import com.service.IVolanteService;
 import org.springframework.beans.factory.annotation.Autowired;

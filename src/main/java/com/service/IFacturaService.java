@@ -1,6 +1,6 @@
 package com.service;
 
-import com.model.Documentos.Factura;
+import com.model.Factura;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

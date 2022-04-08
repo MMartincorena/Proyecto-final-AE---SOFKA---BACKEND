@@ -1,6 +1,6 @@
 package com.service;
 
-import com.model.Documentos.Volante;
+import com.model.Volante;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -1,6 +1,6 @@
 package com.repository;
 
-import com.model.Documentos.Cliente;
+import com.model.Cliente;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
